@@ -1,7 +1,11 @@
 import React from "react";
 import ReactDOM from 'react-dom';
 import { addTodos, addTodo, removeTodo } from "../frontend/actions/todo_actions";
-import configureStore from "./store/store"
+import configureStore from "./store/store";
+import App from './components/app';
+import Root from './components/root';
+import allTodos from './reducers/selectors';
+import TodoList from './components/todos/todo_list'
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -12,5 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addTodos = addTodos;
     window.addTodo = addTodo;
     window.removeTodo = removeTodo;
-    ReactDOM.render(<h1>Todos</h1>, content)
+    window.allTodos = allTodos;
+    ReactDOM.render(<Root />, content)
 })
